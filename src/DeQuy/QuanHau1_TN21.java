@@ -3,16 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package CoBan;
+package DeQuy;
+
 /**
  *
  * @author nhokt
  */
-import java.util.*;
-public class DanhDauChuCai {
-    public static void main(String[] args){
-        Scanner in = new Scanner(System.in);
-        in.next().chars().distinct().count();
-
-    }
+public class QuanHau1_TN21 {
+    
 }

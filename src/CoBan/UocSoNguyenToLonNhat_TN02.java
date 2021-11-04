@@ -17,38 +17,17 @@ public class UocSoNguyenToLonNhat_TN02 {
 
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
-        int n = in.nextInt();
-        for (int i = 0; i < n; i++) {
-            long a = in.nextLong();
-            for (long j = 1; j <= Math.sqrt(a); j++) {
-
-                if (a % j == 0) {
-                    if (isPrime(a / j)) {
-                        System.out.println(a / j);
-                        //System.out.println(j);
-                    } else if (isPrime(j)) {
-                        //x = j;
-                        System.out.println(j);
-                    }
-
+        int t = in.nextInt();
+        while (t-- > 0) {
+            long i,n = in.nextLong();
+            for ( i = 2; i <= Math.sqrt(n); i++) {
+                if (i*i==n) {
+                    n/=i;
+                    break;
                 }
-                //System.out.println(x);
-
+                while(n%i==0) n/=i;
             }
+            System.out.println(n);
         }
-
     }
-
-    public static boolean isPrime(long n) {
-        if (n <= 1) {
-            return false;
-        }
-        for (int i = 2; i <= n / 2; i++) {
-            if (n % i == 0) {
-                return false;
-            }
-        }
-        return true;
-    }
-
 }

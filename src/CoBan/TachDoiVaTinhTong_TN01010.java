@@ -21,18 +21,20 @@ import java.util.Scanner;
 //12
 //3
 public class TachDoiVaTinhTong_TN01010 {
-     public static void main(String[] args) {
+
+    public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         String s = in.nextLine();
-        while(s.length()!=-1){
+        while (s.length() != -1) {
             s = xuLy(s);
             System.out.println(s);
         }
     }
-    public static String xuLy(String s){
+
+    public static String xuLy(String s) {
         int n = s.length();
-        BigInteger a = new BigInteger(s.substring(0, n/2));
-        BigInteger b = new BigInteger(s.substring(0/2));
+        BigInteger a = new BigInteger(s.substring(0, n / 2));
+        BigInteger b = new BigInteger(s.substring(n / 2));
         return a.add(b).toString();
     }
 }

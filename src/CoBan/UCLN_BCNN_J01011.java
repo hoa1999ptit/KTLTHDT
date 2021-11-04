@@ -18,15 +18,19 @@ public class UCLN_BCNN_J01011 {
         for (int i = 0; i < t; i++) {
             int a = in.nextInt();
             int b = in.nextInt();
-            System.out.println(bcnn(a,b)+" "+ucln(a,b));           
+            int x = ucln(a, b);
+            System.out.println((long)a*b/x+" "+x);           
         }
     }
     public static int ucln(int a, int b) {
-        if (b == 0) return a;
-        return ucln(b, a % b);
+        while(b>0){
+            int t = a%b;
+            a=b;b=t;
+        }
+        return a;
     }
 
-    public static int bcnn(int a, int b) {
-        return (a * b) / ucln(a, b);
-    }
+//    public static int bcnn(int a, int b) {
+//        return (a * b) / ucln(a, b);
+//    }
 }

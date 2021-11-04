@@ -15,11 +15,14 @@ public class TongNhoNhat_TN28 {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         int t = in.nextInt();
+        int tong =0;
         while(t-->0){
             int a = in.nextInt();
             for (int i = 0; i < a; i++) {
-                
+                int x = in.nextInt();
+                tong += x;
             }
+            System.out.println(tong);
         }
     }
 }
