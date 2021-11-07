@@ -9,7 +9,7 @@ package OOP.DanhSachMatHang_J05081;
  *
  * @author nhokt
  */
-public class DanhSachMatHang_J05081 {
+public class Main {
     public static void main(String[] args) {
         
     }
