@@ -5,19 +5,31 @@
  */
 package Stack_Queue;
 
-import java.util.Scanner;
+import java.util.*;
 
 /**
  *
  * @author nhokt
  */
 public class So0VaSo9_T224 {
-    public static void main(String[] args) {
+
+    public static void main(String[] args) throws Exception {
         Scanner in = new Scanner(System.in);
         int t = in.nextInt();
-        while (t-->0) {            
-            int n = in.nextInt();
-            
+        while (t-- > 0) {
+            Long n = in.nextLong();
+            Queue<Long> queue=new ArrayDeque<>();
+            queue.add(9l);
+            while (!queue.isEmpty()) {
+                Long remove = queue.remove();
+                if (remove % n != 0) {
+                    queue.add(remove * 10);
+                    queue.add(remove * 10 + 9);
+                } else {
+                    System.out.println(remove);
+                    break;
+                }
+            }
         }
     }
 }
