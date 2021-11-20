@@ -8,38 +8,53 @@ package Stack_Queue;
 import java.util.*;
 
 /**
- *
+ *  input 2
+ *  [()]{}{[()()]()}
+[(])
+
+
+
+ * 
+ * 
  * @author nhokt
  */
 public class KTDayNgoacDung_T210 {
+
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         int t = Integer.parseInt(in.nextLine());
         while (t-- > 0) {
             String s = in.nextLine();
-            xuly(s);
+            if (check(s)) {
+                System.out.println("YES");
+            } else {
+                System.out.println("NO");
+            }
+
         }
     }
 
-    private static void xuly(String s) {
+    public static boolean check(String s) {
         Stack<Character> st = new Stack<>();
-        Scanner sc = new Scanner(s);
-        while(sc.hasNext()){
-            String tmp = sc.next();
-            for (int i = 0; i < tmp.length(); i++) {
-                if (tmp.charAt(i)!=' ') {
-                    st.push(tmp.charAt(i));
+        for (int i = 0; i < s.length(); i++) {
+            if (s.charAt(i) == '(' || s.charAt(i) == '[' || s.charAt(i) == '{') {
+                st.push(s.charAt(i));
+            } else {
+                if (st.empty()) {
+                    return false;
                 }
-                else{
-                    while (!st.empty()) {                        
-                        
-                        System.out.print(st.peek());
-                        st.pop();
-                    }
-                    System.out.print(" ");
+                char in = st.peek(), out = s.charAt(i);
+                if (in == '(' && out == ')') {
+                    st.pop();
+                } else if (in == '[' && out == ']') {
+                    st.pop();
+                } else if (in == '{' && out == '}') {
+                    st.pop();
+                } else {
+                    return false;
                 }
-                System.out.println();
             }
         }
+        return true;
     }
 }

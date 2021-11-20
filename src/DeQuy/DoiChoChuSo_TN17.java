@@ -22,7 +22,7 @@ public class DoiChoChuSo_TN17 {
 //            String reverseS = swap(s);
 //            System.out.println(reverseS);
             for (int j = 0; j < s.length(); j++) {
-                int Max = s[s.length()-1];
+                //int Max = s[s.length()-1];
                 
             }
         }
