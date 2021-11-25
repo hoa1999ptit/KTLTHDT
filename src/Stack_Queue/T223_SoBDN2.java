@@ -1,10 +1,9 @@
-
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package DeQuy;
+package Stack_Queue;
 
 import java.util.*;
 
@@ -12,7 +11,7 @@ import java.util.*;
  *
  * @author nhokt
  */
-public class DayXauFibonacci_T207 {
+public class T223_SoBDN2 {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         int t = in.nextInt();

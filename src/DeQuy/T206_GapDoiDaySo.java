@@ -1,4 +1,3 @@
-
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -12,7 +11,7 @@ import java.util.*;
  *
  * @author nhokt
  */
-public class DayXauFibonacci_T207 {
+public class T206_GapDoiDaySo {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         int t = in.nextInt();
