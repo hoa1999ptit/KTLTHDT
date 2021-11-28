@@ -25,7 +25,6 @@ public class J02031_SXChonLKNguoc {
     public static void sapxep(int arr[]) {
         int indexMin, i, j;
         ArrayList<String> list = new ArrayList<>();
-
         // lap qua ta ca cac so
         for (i = 0; i < arr.length - 1; i++) {
             // thiet lap phan tu hien tai la min
@@ -37,7 +36,6 @@ public class J02031_SXChonLKNguoc {
                     indexMin = j;
                 }
             }
-
             if (indexMin != i) {
 //                System.out.println(" ==> Trao doi phan tu: [" + arr[i] 
 //                        + ", " + arr[indexMin] + "]");
