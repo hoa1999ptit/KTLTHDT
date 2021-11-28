@@ -36,7 +36,7 @@ public class DSA09004_DFS_DoThiVoHuong {
                 check[i] = 1;
             }
             DFS(u);
-            //System.out.println();
+            System.out.println();
         }
     }
 
@@ -51,3 +51,16 @@ public class DSA09004_DFS_DoThiVoHuong {
         }
     }
 }
+
+
+/*
+INPUT:
+1
+6 9 5
+1 2 1 3 2 3 2 4 3 4 3 5 4 5 4 6 5 6
+
+OUTPUT:
+5 3 1 2 4 6
+
+
+ */

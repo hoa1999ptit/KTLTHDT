@@ -11,7 +11,7 @@ import java.util.*;
  *
  * @author nhokt
  */
-public class TN05003_DuongDiTheoBFS {
+public class TN05004_DuongDiTheoDFS {
 
     public static boolean[] chuaxet = new boolean[1001];
     public static int[][] ke = new int[1001][1001];
@@ -34,7 +34,7 @@ public class TN05003_DuongDiTheoBFS {
                 ke[f][s] = ke[s][f] = 1;
             }
             for (int i = 1; i <= n; i++) {
-                BFS(dinh);
+                DFS(dinh);
                 if (i != dinh) {
                     trace(dinh, i);
                 }
@@ -42,17 +42,19 @@ public class TN05003_DuongDiTheoBFS {
         }
     }
 
-    public static void BFS(int u) {
-        Queue<Integer> q = new LinkedList<Integer>();
-        q.add(u);
+    public static void DFS(int u) {
+        Stack<Integer> st = new Stack<Integer>();
+        st.push(u);
         chuaxet[u] = false;
-        while (!q.isEmpty()) {
-            int front = q.poll();
+        while (!st.isEmpty()) {
+            int top = st.pop();
             for (int i = 1; i <= n; i++) {
-                if (ke[front][i] == 1 && chuaxet[i]) {
-                    q.add(i);
+                if (ke[top][i] == 1 && chuaxet[i]) {
                     chuaxet[i] = false;
-                    truoc[i] = front;
+                    st.push(top);
+                    st.push(i);
+                    truoc[i] = top;
+                    break;
                 }
             }
         }
@@ -98,13 +100,16 @@ public class TN05003_DuongDiTheoBFS {
         }
     }
 }
-//  1
-//  6 9 1
-//  1 2 1 3 2 3 2 5 3 4 3 5 4 5 4 6 5 6
 
-//  OUTPUT:
-//  1 2
-//  1 3
-//  1 3 4
-//  1 2 5
-//  1 2 5 6
+/*
+TEST:
+1
+6 9 1
+1 2 1 3 2 3 2 5 3 4 3 5 4 5 4 6 5 6
+
+OUTPUT:
+2 1
+2 4
+1 3
+-1
+ */
