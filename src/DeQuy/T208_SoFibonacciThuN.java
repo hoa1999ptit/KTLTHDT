@@ -27,7 +27,6 @@ public class T208_SoFibonacciThuN {
                 res.a[i][j]=0;
                 for (int k = 0; k <=1  ; k++) {
                     res.a[i][j] = (res.a[i][j] + a.a[i][k]*b.a[k][j]) % mod;
-                    
                 }
             }
         }

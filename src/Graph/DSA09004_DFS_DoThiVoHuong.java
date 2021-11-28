@@ -20,7 +20,23 @@ public class DSA09004_DFS_DoThiVoHuong {
         Scanner in = new Scanner(System.in);
         int t = in.nextInt();
         while (t-- > 0) {
-
+            for (int i = 0; i < 1005; i++) {
+                list[i] = new ArrayList<Integer>();
+            }
+            int v = in.nextInt();
+            int e = in.nextInt();
+            int u = in.nextInt();
+            for (int i = 0; i < e; i++) {
+                int x = in.nextInt();
+                int y = in.nextInt();
+                list[x].add(y);
+                list[y].add(x);
+            }
+            for (int i = 0; i < check.length; i++) {
+                check[i] = 1;
+            }
+            DFS(u);
+            //System.out.println();
         }
     }
 

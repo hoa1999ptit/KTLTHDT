@@ -14,24 +14,28 @@ import java.util.Scanner;
 public class J02004_MangDoiXung {
 
     public static void main(String[] args) {
-        Scanner in = new Scanner(System.in);
-        int t = in.nextInt();
-        int kt =1;
-        for (int i = 0; i < t; i++) {
-            int n = in.nextInt();
-            int a[] = new int[n];
-            for (int j = 0; j < n; j++) {
-                a[j] = in.nextInt();
+        int[] arr;
+        int n;
+        Scanner scanner = new Scanner(System.in);
+        n = scanner.nextInt();
+        arr = new int[n];
+        for (int i = 0; i < n; i++) {
+            arr[i] = scanner.nextInt();
+        }
+        // ktra doi xung
+        boolean ok = true;
+        int x;
+        for (int i = 0; i <= n / 2; i++) {
+            x = n - 1 - i;
+            if (arr[i] != arr[x]) {
+                ok = false;
+                break;
             }
-            for (int j = 0; j < n / 2; j++) {
-                if (a[j] != a[n - j - 1]) {
-                    kt=0;
-                    break;
-                }
-            }
-            if (kt==0) {
-                System.out.println("NO");
-            }else System.out.println("YES");
+        }
+        if (ok == true) {
+            System.out.println("YES");
+        } else {
+            System.out.println("NO");
         }
     }
 
