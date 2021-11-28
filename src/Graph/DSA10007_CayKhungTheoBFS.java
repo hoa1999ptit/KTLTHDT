@@ -11,7 +11,7 @@ import java.util.*;
  *
  * @author nhokt
  */
-public class DSA09005_BFS_DoThiVoHuong {
+public class DSA10007_CayKhungTheoBFS {
 
     static List<Integer>[] list = (List<Integer>[]) new List[1005];
     static int[] check = new int[1005];
@@ -20,13 +20,13 @@ public class DSA09005_BFS_DoThiVoHuong {
     static void BFS(int start) {
         queue.add(start);
         check[start] = 0;
-        System.out.print(start + " ");
+        System.out.print(start);
         while (!queue.isEmpty()) {
             int x = queue.poll();
             for (int i = 0; i < list[x].size(); i++) {
                 int y = list[x].get(i);
                 if (check[y] == 1) {
-                    System.out.print(y + " ");
+                    System.out.print(" -> " + y);
                     queue.add(y);
                     check[y] = 0;
                 }
@@ -53,13 +53,29 @@ public class DSA09005_BFS_DoThiVoHuong {
             for (int i = 0; i < check.length; i++) {
                 check[i] = 1;
             }
+            System.out.print("BFS(" + start + ") = ");
             BFS(start);
             System.out.println();
         }
     }
 }
 
-//  1
-//  6 9 1
-//  1 2 1 3 2 3 2 5 3 4 3 5 4 5 4 6 5 6
-//  OUTPUT       1 2 3 5 4 6
+
+/*
+TEST:
+2
+test 1:
+4 4 2
+1 2 1 3 2 4 3 4
+test 2:
+4 2 2
+1 2 3 4
+
+
+OUTPUT:
+2 1
+2 4
+1 3
+-1
+
+ */
