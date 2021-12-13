@@ -13,29 +13,31 @@ import java.util.Scanner;
 // thì mảng đó không phải mảng đối xứng
 public class J02004_MangDoiXung {
 
+    static int[] arr;
+    static int n;
+
     public static void main(String[] args) {
-        int[] arr;
-        int n;
-        Scanner scanner = new Scanner(System.in);
-        n = scanner.nextInt();
-        arr = new int[n];
-        for (int i = 0; i < n; i++) {
-            arr[i] = scanner.nextInt();
-        }
-        // ktra doi xung
-        boolean ok = true;
-        int x;
-        for (int i = 0; i <= n / 2; i++) {
-            x = n - 1 - i;
-            if (arr[i] != arr[x]) {
-                ok = false;
-                break;
+        Scanner in = new Scanner(System.in);
+        int t = in.nextInt();
+        while (t-- > 0) {
+            n = in.nextInt();
+            arr = new int[n];
+            for (int i = 0; i < n; i++) {
+                arr[i] = in.nextInt();
             }
-        }
-        if (ok == true) {
-            System.out.println("YES");
-        } else {
-            System.out.println("NO");
+            // ktra doi xung
+            int check = 1;
+            for (int i = 0; i <= n / 2; i++) {
+                if (arr[i] != arr[n - i - 1]) {
+                    check = 0;
+                    break;
+                }
+            }
+            if (check == 0) {
+                System.out.println("NO");
+            } else {
+                System.out.println("YES");
+            }
         }
     }
 

@@ -3,14 +3,18 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package OOP.DanhSachMatHang_J05081;
+package OOP.J04015_TinhThuNhapGiaoVien;
+
+import java.util.Scanner;
 
 /**
  *
  * @author nhokt
  */
 public class Main {
+
     public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
         
     }
 }
