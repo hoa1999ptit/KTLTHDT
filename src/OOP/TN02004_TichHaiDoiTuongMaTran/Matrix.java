@@ -59,7 +59,6 @@ public class Matrix {
     }
 
     public void nextMatrix(Scanner sc) {
-
         for (int i = 0; i < M; i++) {
             for (int j = 0; j < N; j++) {
                 a[i][j] = sc.nextInt();

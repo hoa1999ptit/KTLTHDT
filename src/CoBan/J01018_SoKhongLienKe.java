@@ -13,34 +13,46 @@ import java.util.*;
  */
 public class J01018_SoKhongLienKe {
 
-    public static void main(String[] args) throws Exception {
-        Scanner sc = new Scanner(System.in);
-        int t = Integer.valueOf(sc.nextLine());
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int t = scanner.nextInt();
+
         while (t-- > 0) {
-            String s = sc.nextLine();
-            int i;
-            if (tongchuso(Integer.parseInt(s)) % 10 == 0) {
-                for (i = 1; i < s.length(); i++) {
-                    if (Math.abs(s.charAt(i) - s.charAt(i - 1)) != 2) {
-                        System.out.println("NO");
-                        break;
-                    }
-                }
-                if (i == s.length()) {
-                    System.out.println("YES");
-                }
+            char[] arrNumber = scanner.nextBigInteger().toString().toCharArray();
+            if (tongChuSo(arrNumber) == true && khoangCach(arrNumber) == true) {
+                System.out.println("YES");
             } else {
                 System.out.println("NO");
             }
         }
     }
 
-    public static int tongchuso(int s) {
+    public static boolean tongChuSo(char[] arrNumber) {
         int sum = 0;
-        while (s > 0) {
-            sum += s % 10;
-            s = s / 10;
+        for (int i = 0; i < arrNumber.length; i++) {
+            sum += arrNumber[i] - '0';
         }
-        return sum;
+        if (sum % 10 != 0) {
+            return false;
+        }
+        return true;
+    }
+
+    public static boolean khoangCach(char[] arrNumber) {
+        for (int i = 0; i < arrNumber.length - 1; i++) {
+            if (Math.abs(arrNumber[i] - arrNumber[i + 1]) != 2) {
+                return false;
+            }
+        }
+        return true;
     }
 }
+/*
+3
+1353
+NO
+246864
+YES
+123435
+NO
+*/

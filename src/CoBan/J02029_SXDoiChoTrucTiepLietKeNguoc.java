@@ -14,61 +14,38 @@ import java.util.*;
 public class J02029_SXDoiChoTrucTiepLietKeNguoc {
 
     public static void main(String[] args) {
-        Scanner in = new Scanner(System.in);
-        int test = in.nextInt();
-        while (test-- > 0) {
-            int n = in.nextInt();
-            int[] a = new int[n];
-            for (int i = 0; i < n; i++) {
-                a[i] = in.nextInt();
+        Scanner scanner = new Scanner(System.in);
+        int t = scanner.nextInt();
+        while (t-- > 0) {
+            int size = scanner.nextInt();
+            int[] arrNumber = new int[size];
+            ArrayList<String> arrStepNguoc = new ArrayList<>();
+
+            for (int i = 0; i < size; i++) {
+                arrNumber[i] = scanner.nextInt();
             }
-            for (int i = 0; i < n - 1; i++) {
-                for (int j = i + 1; j < n; j++) {
-                    if (a[i] > a[j]) {
-                        int tmp = a[i];
-                        a[i] = a[j];
-                        a[j] = tmp;
+
+            for (int i = 0; i < arrNumber.length - 1; i++) {
+                String sNumber = "";
+                for (int j = i + 1; j < arrNumber.length; j++) {
+                    if (arrNumber[i] > arrNumber[j]) {
+                        int temp = arrNumber[i];
+                        arrNumber[i] = arrNumber[j];
+                        arrNumber[j] = temp;
                     }
                 }
-                if (!isSorted(a)) {
-                    in(a, i + 1);
-                } else {
-                    in(a, i + 1);
-                    break;
+
+                for (int j = 0; j < arrNumber.length; j++) {
+                    sNumber += arrNumber[j] + " ";
                 }
+
+                arrStepNguoc.add(sNumber.trim());
+            }
+
+            for (int i = arrStepNguoc.size() - 1; i >= 0; i--) {
+                System.out.println("Buoc " + (i + 1) + ": " + arrStepNguoc.get(i));
             }
         }
-    }
-
-    private static boolean isSorted(int[] a) {
-        for (int i = 0; i < a.length - 1; i++) {
-            if (a[i] > a[i + 1]) {
-                return false;
-            }
-        }
-        return true;
-    }
-
-    private static void in(int[] a, int buoc) {
-        ArrayList<String> list = new ArrayList<>();
-        list.add("");
-        for (int i = 0; i < a.length; i++) {
-            String tmp = "Buoc " + i + 1 + ":";
-            tmp = tmp + " " + a[i];
-            list.add(tmp);
-        }
-        Collections.reverse(list);
-        for (String tmp : list) {
-            System.out.println(tmp);
-        }
-
-
-
-//        System.out.format("Buoc %d: ", buoc);
-//        for (int i = 0; i < a.length; i++) {
-//            System.out.format("%d ", a[i]);
-//        }
-//        System.out.println();
     }
 }
 /*

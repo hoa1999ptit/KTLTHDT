@@ -13,22 +13,28 @@ import java.util.*;
  */
 public class J02017_ThuGonDaySo {
 
-    public static void main(String[] args) throws Exception {
-        Scanner in = new Scanner(System.in);
-        int n = in.nextInt();
-        int[] a = new int[n];
-        int[] b = new int[1005];
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        ArrayList<Integer> a = new ArrayList<>();
         for (int i = 0; i < n; i++) {
-            a[i] = in.nextInt();
+            a.add(sc.nextInt());
         }
-        int c = 0, k;
-        for (k = 0; k < a.length; k++) {
 
-            if ((a[k] + a[k + 1]) % 2 == 0) {
-                c++;
+        int i = 0;
+        int length = a.size();
+        while (i < length - 1) {
+            if ((a.get(i) + a.get(i + 1)) % 2 == 0) {
+                a.remove(i);
+                a.remove(i);
+                length = a.size();
+                i = 0;
+            } else {
+                i++;
             }
-        }
-        System.out.println(c++);
-    }
 
+        }
+
+        System.out.println(a.size());
+    }
 }

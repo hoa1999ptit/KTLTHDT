@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package OOP.KhaiBaoLopThiSinh_J04005;
+package OOP.J04005_KhaiBaoLopThiSinh;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;

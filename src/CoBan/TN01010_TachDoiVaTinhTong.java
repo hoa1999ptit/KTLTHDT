@@ -1,14 +1,9 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package CoBan;
 //Cho một số nguyên dương không quá 200 chữ số. Mỗi bước tách số nguyên thành hai nửa: nửa đầu là n/2 chữ số đầu tiên, nửa sau là phần còn lại (trong đó n là số chữ số của số ban đầu, nếu n lẻ thì phép chia 2 sẽ tính phần nguyên). Sau đó thực hiện tính tổng của hai nửa này.
 //Lặp lại các bước trên cho đến khi kết quả chỉ còn là số có 1 chữ số.
 
-import java.math.BigInteger;
-import java.util.Scanner;
+import java.math.*;
+import java.util.*;
 
 //Hãy thực hiện tính toán và in kết quả của từng bước.
 //Input
@@ -25,7 +20,8 @@ public class TN01010_TachDoiVaTinhTong {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         String s = in.nextLine();
-        while (s.length() != -1) {
+        int n = s.length();
+        while (n >= -1) {
             s = xuLy(s);
             System.out.println(s);
         }
