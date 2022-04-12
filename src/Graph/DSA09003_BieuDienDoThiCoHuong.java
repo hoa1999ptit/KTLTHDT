@@ -12,7 +12,6 @@ import java.util.*;
  * @author nhokt
  */
 
-// chuyển đổi ds cạnh sang ds kề
 public class DSA09003_BieuDienDoThiCoHuong {
 
     public static void main(String[] args) {
@@ -24,7 +23,6 @@ public class DSA09003_BieuDienDoThiCoHuong {
             List<Integer>[] list = (List<Integer>[]) new List[1005];
             for (int i = 0; i < list.length; i++) {
                 list[i] = new ArrayList<Integer>();
-
             }
             for (int i = 0; i < e; i++) {
                 int u = in.nextInt();
